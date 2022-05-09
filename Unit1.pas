@@ -1,6 +1,6 @@
 (*
-        Простой пример использования Полиморфизма в Delphi
-        на примере функции Add
+        РџСЂРѕСЃС‚РѕР№ РїСЂРёРјРµСЂ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЏ РџРѕР»РёРјРѕСЂС„РёР·РјР° РІ Delphi
+        РЅР° РїСЂРёРјРµСЂРµ С„СѓРЅРєС†РёРё Add
 *)
 
 
@@ -38,7 +38,7 @@ end;
 
 function Add(x,y:string): string; overload;
 begin
-  Result := 'Итоговая строка: ' + x + y;
+  Result := 'РС‚РѕРіРѕРІР°СЏ СЃС‚СЂРѕРєР°: ' + x + y;
 end;
 
 {$R *.dfm}
@@ -48,14 +48,14 @@ var
   ResultValue: string;
   IntValue1, IntValue2: integer;
 begin
-            /// здесь, передаём в функцию Add числовые аргументы
+            /// Р·РґРµСЃСЊ, РїРµСЂРµРґР°С‘Рј РІ С„СѓРЅРєС†РёСЋ Add С‡РёСЃР»РѕРІС‹Рµ Р°СЂРіСѓРјРµРЅС‚С‹
   try
     IntValue1 := strtoint(trim(edValue1.Text));
     IntValue2 := strtoint(trim(edValue2.Text));
     ResultValue := inttostr ( Add(IntValue1, IntValue2) );
     ShowMessage(ResultValue);
   except
-    ShowMessage('Ошибка конвертации строка - число');
+    ShowMessage('РћС€РёР±РєР° РєРѕРЅРІРµСЂС‚Р°С†РёРё СЃС‚СЂРѕРєР° - С‡РёСЃР»Рѕ');
   end;
 end;
 
@@ -63,7 +63,7 @@ procedure TForm1.btAddStringValuesClick(Sender: TObject);
 var
   ResultValue: string;
 begin
-            /// здесь, передаём в функцию Add строковые аргументы
+            /// Р·РґРµСЃСЊ, РїРµСЂРµРґР°С‘Рј РІ С„СѓРЅРєС†РёСЋ Add СЃС‚СЂРѕРєРѕРІС‹Рµ Р°СЂРіСѓРјРµРЅС‚С‹
   ResultValue := Add(edValue1.Text, edValue2.Text);
   ShowMessage(ResultValue);
 end;
